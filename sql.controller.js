@@ -1,5 +1,6 @@
 const sql = require("sqlite3").verbose()
-const db = new sql.Database("database.db")
+require('dotenv').config()
+const db = new sql.Database(process.env.db)
 
 db.run(`create table if not exists users (
         id integer primary key autoincrement,
